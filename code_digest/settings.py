@@ -13,9 +13,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
+from dotenv import load_dotenv
 
-if os.path.exists("env.py"):
-    import env
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,12 +27,23 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, "code_digest", "templates")
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+# SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ["code-digest.onrender.com", "127.0.0.1"]
+
+# TO PREVENT 500 ERRORS DURING LOGIN AND REGISTRATION, SO I ADD THIS LINE:
+ACCOUNT_EMAIL_VERIFICATION = "none"
+
+X_FRAME_OPTIONS = "SAMEORIGIN"
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
 
 
 # Application definition
@@ -43,12 +54,32 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "cloudinary_storage",
     "django.contrib.staticfiles",
+    "cloudinary_storage",
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
     "digestblog",
     "cloudinary",
     "django_summernote",
+    "crispy_forms",
 ]
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+MESSAGE_TAGS = {
+    messages.DEBUG: "alert-info",
+    messages.INFO: "alert-info",
+    messages.SUCCESS: "alert-success",
+    messages.WARNING: "alert-warning",
+    messages.ERROR: "alert-danger",
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -58,6 +89,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = "code_digest.urls"
@@ -111,6 +143,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+ACCOUNT_EMAIL_VERIFICATION = "none"
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
@@ -132,6 +165,7 @@ STATICFILES_STORAGE = "cloudinary_storage.storage.StaticHashedCloudinaryStorage"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "code_digest/static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
+CLOUDINARY_URL = os.getenv("CLOUDINARY_URL")
 MEDIA_URL = "/media/"
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
@@ -139,3 +173,12 @@ DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Set session cookie settings
+SESSION_COOKIE_SECURE = True  # Ensure session cookies are only sent over HTTPS
+SESSION_COOKIE_SAMESITE = (
+    "None"  # Set SameSite attribute to 'None' for cross-site requests
+)
+
+# Set CSRF cookie settings
+CSRF_COOKIE_SECURE = True  # Ensure CSRF cookies are only sent over HTTPS
