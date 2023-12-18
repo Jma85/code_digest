@@ -1,8 +1,8 @@
-# CodeDigest - A Blog site.
+# CodeDigest - A Blog site
 
 ![All devices link]()
 
-[Live project link.]()
+[Live project link]()
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@
     - [Post Contents and Images](#post-contents-and-images)
     - [Acknowledgements](#acknowledgements)
 
-# Introduction
+## Introduction
 
 CodeDigest is a dynamic news blog website that offers an engaging user experience. By utilizing Google Authentication (OAuth 2.0) as the sole login method, users can securely access the site's features.
 
