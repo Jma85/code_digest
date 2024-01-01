@@ -55,16 +55,17 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "cloudinary_storage",
     "django.contrib.sites",
+    "django.contrib.staticfiles",
+    "django_summernote",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
-    "digestblog",
+    "allauth.socialaccount.providers.google",
+    "cloudinary_storage",
     "cloudinary",
-    "django_summernote",
     "crispy_forms",
+    "digestblog",
 ]
 
 SITE_ID = 1
