@@ -6,7 +6,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; data-charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CodeDigest</title>
+    <title>Storyline</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
@@ -25,8 +25,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">C<span class="red-e">o</span>de<span
-                        class="thin">|Digest</span></span></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">Y<span class="red-e">e</span>mos<span
+                        class="thin">|Storyline</span></span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,6 +40,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
+                    {% comment %} <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog_post' %}">Post</a>
+                    </li> {% endcomment %}
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
@@ -50,7 +53,7 @@
                     {% endif %}
                 </ul>
                 <span class="navbar-text text-muted">
-                    <em>We give the best tech blogs.</em>
+                    <em>We live and breathe software development.</em>
                 </span>
             </div>
         </div>
@@ -77,7 +80,7 @@
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">Made by Jannat</p>
+        <p class="m-0 text-center text-white">Made by Adeyemo</p>
         <p class="m-0 text-center text-white">Follow me: <a href="https://facebook.com" target="blank"
                 aria-label="Facebook"><i class="fab fa-facebook-square ms-3"></i></a>
             <a href="https://www.twitter.com" target="blank" aria-label="Twitter"><i
