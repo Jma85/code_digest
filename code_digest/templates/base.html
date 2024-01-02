@@ -40,6 +40,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
+                    {% comment %} <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog_post' %}">Post</a>
+                    </li> {% endcomment %}
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
@@ -50,7 +53,7 @@
                     {% endif %}
                 </ul>
                 <span class="navbar-text text-muted">
-                    <em>We give the best tech blogs.</em>
+                    <em>We give the latest trends.</em>
                 </span>
             </div>
         </div>
@@ -77,7 +80,7 @@
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">Made by Jannat</p>
+        <p class="m-0 text-center text-white">Made by JayNat</p>
         <p class="m-0 text-center text-white">Follow me: <a href="https://facebook.com" target="blank"
                 aria-label="Facebook"><i class="fab fa-facebook-square ms-3"></i></a>
             <a href="https://www.twitter.com" target="blank" aria-label="Twitter"><i
