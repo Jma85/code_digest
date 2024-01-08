@@ -34,7 +34,11 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["code-digest.onrender.com", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "code-digest.onrender.com",
+    "127.0.0.1",
+    "jaynat-code-digest-4e5b4824cbda.herokuapp.com",
+]
 
 # TO PREVENT 500 ERRORS DURING LOGIN AND REGISTRATION, SO I ADD THIS LINE:
 ACCOUNT_EMAIL_VERIFICATION = "none"
