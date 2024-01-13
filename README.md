@@ -2,7 +2,7 @@
 
 ![All devices link]()
 
-[Live project link]()
+[Live project link](https://jaynat-code-digest-4e5b4824cbda.herokuapp.com/)
 
 ## Table of Contents
 
