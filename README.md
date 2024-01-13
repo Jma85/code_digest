@@ -122,8 +122,6 @@ These testing measures were crucial in identifying and resolving any issues or e
 
 ### Heroku
 
-I started working on the project in Gitpod and I was able to carried out few tests deployment to make sure the site works as it should. Then, I later transferred the project to Codeanywhere due to Gitpod insufficient user hours.
-
 The final deployemnt was carried out using codeanywhere, and GitHub connected to Heroku.
 
 ## Initial Deployment
@@ -135,8 +133,6 @@ So a test deployment was launch at the very early stage of the project to make s
 # Credits
 
 ### Code
-
-- The structure and code of the project were inspired by two project walkthroughs provided by Code Institute:
 
   - Hello Django - I utilized this walkthrough to implement CRUD functionalities in the project.
   - I think therefore I blog -
